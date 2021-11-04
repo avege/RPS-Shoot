@@ -1,7 +1,5 @@
 'use strict';
-const playerSelection = '';//won't prompt if not here
-const computerSelection = computerPlay();
-
+//declare variables used in two functions
 let playerScore = 0;
 let compScore = 0;
 
@@ -18,9 +16,11 @@ function computerPlay() {
     
 }
 
+//one round of play
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt('rps');
+    playerSelection = prompt('Rock! Paper! Scissors!', 'Shoot!');
     playerSelection = playerSelection.toLowerCase();
+
     if (playerSelection === 'rock' && computerSelection === 'Rock' || playerSelection === 'paper' && computerSelection === 'Paper' || playerSelection === 'scissors' && computerSelection === 'Scissors') {
         return 'It\'s a tie!';
     } else if (playerSelection === 'rock' && computerSelection === 'Paper') {
@@ -44,17 +44,16 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return 'Please choose rock, paper, or scissors'
     }
-
 }
 
-
-// console.log(playRound(playerSelection, computerSelection));
-function game() {
-   
+//five rounds of play, declaring const variables here makes computer change choice each round
+function game() { 
     for (let i = 0; i < 5; i++) {
+        const computerSelection = computerPlay();
+        const playerSelection = '';
         console.log(playRound(playerSelection, computerSelection));
     }
-
+    //final score declaration
     if (playerScore > compScore) {
         return 'Yay! You won!';
     } else {
@@ -62,4 +61,5 @@ function game() {
     }
     
 }
+//let's play!
 console.log(game());
