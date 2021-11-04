@@ -54,6 +54,12 @@ function game() {
     for (let i = 0; i < 5; i++) {
         console.log(playRound(playerSelection, computerSelection));
     }
+
+    if (playerScore > compScore) {
+        return 'Yay! You won!';
+    } else {
+        return 'Oh no! You lost!';
+    }
     
 }
-game();
+console.log(game());
