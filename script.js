@@ -48,11 +48,13 @@ function playRound(playerSelection, computerSelection) {
 
 //five rounds of play, declaring const variables here makes computer change choice each round
 function game() { 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i < 6; i++) {
         const computerSelection = computerPlay();
         const playerSelection = '';
+        console.log('Round ' + i + '!');
         console.log(playRound(playerSelection, computerSelection));
     }
+    
     //final score declaration
     if (playerScore > compScore) {
         return 'Yay! You won!';
